@@ -1,0 +1,83 @@
+:root {
+  /* ---- Darkroom palette (neutral dark-mode variant) ---- */
+  --bg: #0b0d10;
+  --bg-raised: #101318;
+  --panel: #161a20;
+  --panel-edge: #262b33;
+  --safelight: #e8a33d;
+  --safelight-dim: #a97426;
+  --tray-red: #c1443b;
+  --paper: #eef1f4;
+  --paper-dim: #a7aeb8;
+  --muted: #6b7280;
+
+  /* ---- Type ---- */
+  --font-display: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Inter', -apple-system, sans-serif;
+
+  color-scheme: dark;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image:
+    radial-gradient(ellipse 900px 500px at 50% -10%, rgba(232, 163, 61, 0.08), transparent),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 3px);
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Sørger for at indholdet fylder og skubber footeren ned, uden at mase grids */
+.main-layout {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--safelight);
+  color: #16110d;
+}
+
+/* visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--safelight);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
